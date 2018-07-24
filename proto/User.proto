@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service UserService {
+  rpc fetchUser (UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+  string user_id = 1;
+}
+
+message UserResponse {
+  User user = 1;
+}
+
+message User {
+  string id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  bool is_email_verified = 5;
+}
